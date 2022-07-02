@@ -10,13 +10,12 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   &:before{
-    content:'';
     content: "";
     width: 100%;
     height: 100vh;
     //background: linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b);
     // background: #D3D3D3;
-    background-image: url("../public/duotone.png");
+    background-image: url("../public/duotone_new.png");
     position: fixed;
     left: 0;
     top: 0;
@@ -29,6 +28,76 @@ body {
 
 .text-shadow{
   text-shadow: 0px 2px 0px rgb(0 0 0 / 30%);
+}
+.marquee {
+  display: flex;
+  flex-direction: row;
+  color: red;
+  // padding-left: 100%;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee span {
+  color: yellow;
+}
+
+/* Make it move */
+@keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+//Jittery Text
+
+// .theText {
+//   font-size: 260px;
+//   font-weight: 900;
+//   text-align: center;
+//   width: 80px;
+//   margin: auto;
+//   position: relative;
+//   left: -70px;
+//   cursor: pointer;
+// }
+
+.theImage {
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: jitter;
+}
+
+@keyframes jitter {
+  10% {
+    transform: translate(-2px, -3px) scale(1.01, 1.01);
+  }
+  20% {
+    transform: translate(3px, 2px) scale(.99, .99);
+  }
+  30% {
+    transform: translate(-4px, -5px) scale(1.01, 1.01);
+  }
+  40% {
+    transform: translate(2px, 3px) scale(1, 1);
+  }
+  50% {
+    transform: translate(-1px, -2px) scale(.98, .98);
+  }
+  60% {
+    transform: translate(0px, 3px) scale(1.02, 1.02);
+  }
+  70% {
+    transform: translate(-2px, -4px) scale(1, 1);
+  }
+  80% {
+    transform: translate(3px, 5px) scale(.99, .99);
+  }
+  90% {
+    transform: translate(-5px, -3px) scale(1.1, 1.1);
+  }
+  100% {
+    transform: translate(3px, 1px) scale(.95, .95);
+  }
 }
 
 .adjacent-post{
